@@ -1,0 +1,35 @@
+<mat-sidenav-container  [style.z-index]="isSmallScreen ? 100 : 0">
+    <mat-sidenav #sidenav [mode]="isSmallScreen ? 'over' : 'side'" [fixedInViewport]="isSmallScreen" fixedTopGap="0"
+        [opened]="!isSmallScreen" class="side-nav">
+        <mat-list class="logo">
+            <mat-list-item>
+                <img matListAvatar src="../../../assets/hospital-avatar-color.png" alt="...">
+                <h3 matLine> Hospital Municipal </h3>
+            </mat-list-item>
+        </mat-list>
+        <mat-nav-list>
+            <h3 mat-subheader>inicio</h3>
+            <a mat-list-item (click)="navigateTo('turnos')">
+                <mat-icon mat-list-icon class="light">today</mat-icon>
+            <h5 mat-line>Mis Turnos</h5>
+            </a>
+            <a mat-list-item  (click)="signOut()">
+                <mat-icon mat-list-icon class="light">exit_to_app</mat-icon>
+                <h5 mat-line>Salir</h5>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <!--Main Bar-->
+        <mat-toolbar>
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="sidenav.toggle()"
+                *ngIf="isSmallScreen">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <span class="title">Mis Turnos -</span>   <span class="name">{{user.nombre}}</span>
+            <span class="remaining-space"></span>
+
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

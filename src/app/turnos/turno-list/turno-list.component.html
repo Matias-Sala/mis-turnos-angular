@@ -1,0 +1,28 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card>
+        <mat-list *ngIf="turnos.length > 0">
+            <mat-list-item *ngFor="let turno of turnos" class="mat-list-base">
+                <div matListIcon>
+                    {{turno.fecha | date:'dd MMM'}}
+                </div>
+                <h3 matLine>{{turno.doctorNombre}} - {{turno.hora | date:'HH:mm'}}hs </h3>
+                <p matLine>
+                    <span> {{turno.servicioNombre}} </span>
+                </p>
+                <p matLine>
+                    <span> {{turno.pacienteNombre}} </span>
+                </p>
+                <button mat-icon-button color="primary" aria-label="Cancelar Turno" (click)="cancelarTurno(turno.id)" *ngIf="false">
+                    <mat-icon>clear</mat-icon>
+                </button>
+            </mat-list-item>
+            <div></div>
+        </mat-list>
+            <div fxLayout="row" fxLayoutAlign="center center" *ngIf="turnos.length === 0">
+                <h3>No tienes ningún turno pendiente.</h3>
+            </div>           
+    </mat-card>
+    <button mat-mini-fab color="warn" (click)="navigateTo('nuevo')">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>

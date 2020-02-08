@@ -1,0 +1,35 @@
+mat-card {
+    margin-top: 2rem;
+    min-width: 22rem;
+    min-height: 20rem;
+}
+
+mat-card-content {
+    padding: 0rem;
+}
+
+mat-list-item {
+    letter-spacing: .009375em;
+}
+
+.mat-list-base .mat-list-item .mat-line:nth-child(n+2) {
+    color: rgba(0,0,0,.54);
+}
+
+.mat-list-item-meta {
+    color: rgba(0,0,0,.6);
+    font-size: .75rem;
+}
+
+
+.mat-list-base .mat-list-item .mat-list-icon, .mat-list-base .mat-list-option .mat-list-icon {
+    width: 32px;
+    height: 40px;
+    font-size: 16px;
+}
+
+.mat-mini-fab {
+    right: 3.5rem;
+    top: 2.6rem;
+    position: absolute;
+}

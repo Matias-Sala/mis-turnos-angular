@@ -1,0 +1,16 @@
+
+mat-list-item {
+    letter-spacing: .009375em;
+}
+
+.mat-list-base .mat-list-item .mat-line:nth-child(n+2) {
+    color: rgba(0,0,0,.54);
+}
+
+.mat-list-item-meta {
+    color: rgba(0,0,0,.6);
+    font-size: .75rem;
+}
+
+
+

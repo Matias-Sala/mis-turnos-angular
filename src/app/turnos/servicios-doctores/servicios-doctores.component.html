@@ -1,0 +1,33 @@
+<form [formGroup]="formGroup" >
+    <div fxLayout="column" fxLayoutAlign="space-between start">
+        <mat-form-field>
+            <mat-label>Especialidades</mat-label>
+            <mat-select #serviciosSelect required formControlName="servicio" (selectionChange)="servivioChange($event.value)">
+                <mat-option>
+                    <ngx-mat-select-search [formControl]="serviciosFilterCtrl" placeholderLabel="Buscar servicio">
+                    </ngx-mat-select-search>
+                </mat-option>
+                <mat-option>Todos los servicios</mat-option>
+                <mat-option *ngFor="let svc of filteredServicios | async" [value]="svc">
+                    {{svc.nombre}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Doctores</mat-label>
+            <mat-select #doctoresSelect formControlName="doctor" placeholder="Todos los doctores" (selectionChange)="doctorChange($event.value)">
+                <mat-option>
+                    <ngx-mat-select-search [formControl]="doctoresFilterCtrl" placeholderLabel="Buscar doctor">
+                    </ngx-mat-select-search>
+                </mat-option>
+                <mat-option>Todos los doctores</mat-option>
+                <mat-option *ngFor="let doctor of filteredDoctores | async" [value]="doctor">{{doctor.nombre}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between end">
+        <button mat-button matStepperPrevious>
+            < Anterior</button> <button mat-button matStepperNext>Siguiente >
+        </button>
+    </div>
+</form>

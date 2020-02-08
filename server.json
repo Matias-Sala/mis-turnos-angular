@@ -1,0 +1,105 @@
+{
+    "servicios": [
+        {
+            "id": 1,
+            "nombre": "Pediatria",
+            "doctorId": 1
+        },
+        {
+            "id": 2,
+            "nombre": "Traumatologia",
+            "doctorId": 3
+        }
+    ],
+    "turnos-disponibles": [
+        {
+            "id": 1,
+            "fecha": "12/08/2019",
+            "hora": "08:00"
+        },
+        {
+            "id": 2,
+            "fecha": "12/08/2019",
+            "hora": "09:00"
+        },
+        {
+            "id": 3,
+            "fecha": "12/08/2019",
+            "hora": "10:00"
+        },
+        {
+            "id": 4,
+            "fecha": "12/09/2019",
+            "hora": "08:30"
+        },
+        {
+            "id": 5,
+            "fecha": "12/09/2019",
+            "hora": "09:10"
+        },
+        {
+            "id": 6,
+            "fecha": "12/09/2019",
+            "hora": "10:45"
+        }
+    ],
+    "doctores": [
+        {
+            "id": 1,
+            "nombre": "Juanjo Lobosco",
+            "servicioId": 1
+        },
+        {
+            "id": 2,
+            "nombre": "Victor Aiola",
+            "servicioId": 1
+        },
+        {
+            "id": 3,
+            "nombre": "Marcelo Timorin",
+            "servicioId": 2
+        },
+        {
+            "id": 4,
+            "nombre": "Juan Alvicoro",
+            "servicioId": 2
+        }
+    ],
+    "pacientes" : [
+        {
+            "id": 1,
+            "numeroDocumento": 27120385,
+            "nombre": "Matias Sala"
+        }
+    ],
+    "turnos": [
+        {
+            "pacienteNombre": "Matias Sala",
+            "servicioNombre": "Pediatría",
+            "doctorNombre": "Junjo Lobosco",
+            "fecha": "12/08/2019",
+            "hora":"08:00",
+            "id": 1
+        },
+        {
+            "pacienteNombre": "Matias Sala",
+            "servicioNombre": "Traumatología",
+            "doctorNombre": "Juan Timorín",
+            "fecha": "12/08/2019",
+            "hora":"09:00",
+            "pacienteId": 1,
+            "usuarioId": 0,
+            "id": 2
+        },
+        {
+            "pacienteNombre": "Matias Sala",
+            "servicioNombre": "Pediatría",
+            "doctorNombre": "Junjo Lobosco",
+            "fecha": "12/08/2019",
+            "hora":"10:00",
+            "pacienteId": 1,
+            "usuarioId": 0,
+            "id": 3
+        }
+    ]
+}

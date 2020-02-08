@@ -1,0 +1,43 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card>
+        <mat-horizontal-stepper [linear]="isLinear" #stepper *ngIf="!mobileQuery.matches" labelPosition="bottom">
+            <mat-step [stepControl]="pacienteCtrl.pacienteFormGroup">
+                <ng-template matStepLabel>Seleccionar Paciente</ng-template>
+                <app-paciente-select #pacienteCtrl></app-paciente-select>
+            </mat-step>
+            <mat-step #serviciostep  [stepControl]="serviciosForm.formGroup">
+                <ng-template matStepLabel>Servicios y Doctores</ng-template>
+                <app-servicios-doctores #serviciosForm></app-servicios-doctores>
+            </mat-step>
+            <mat-step [stepControl]="turnoForm.turnoFormGroup">
+                <ng-template matStepLabel>Seleccione una fecha</ng-template>
+                <app-turno-select #turnoForm></app-turno-select>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Confirmar turno</ng-template>
+                <app-turno-confirm (errorEvent)="stepper.reset()"></app-turno-confirm>
+            </mat-step>
+        </mat-horizontal-stepper>
+    </mat-card>
+</div>
+
+
+
+<mat-vertical-stepper [linear]="isLinear" #stepperV *ngIf="mobileQuery.matches">
+    <mat-step [stepControl]="pacienteCtrl.pacienteFormGroup">
+        <ng-template matStepLabel>Seleccionar Paciente</ng-template>
+        <app-paciente-select #pacienteCtrl></app-paciente-select>
+    </mat-step>
+    <mat-step [stepControl]="serviciosForm.formGroup">
+        <ng-template matStepLabel>Servicios y Doctores</ng-template>
+        <app-servicios-doctores #serviciosForm></app-servicios-doctores>
+    </mat-step>
+    <mat-step [stepControl]="turnoForm.turnoFormGroup">
+        <ng-template matStepLabel>Seleccione una fecha</ng-template>
+        <app-turno-select #turnoForm></app-turno-select>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Confirmar turno</ng-template>
+        <app-turno-confirm></app-turno-confirm>
+    </mat-step>
+</mat-vertical-stepper>

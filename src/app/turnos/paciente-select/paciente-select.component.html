@@ -1,0 +1,37 @@
+<form [formGroup]="pacienteFormGroup" (ngSubmit)="onSummit()">
+    <div fxLayout="column" fxLayoutAlign="space-between start">
+
+        <span>Paciente</span>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Numero de documento</mat-label>
+            <input matInput formControlName="numeroDocumento" [errorStateMatcher]="matcher">
+            <mat-icon matSuffix>account_box</mat-icon>
+            <mat-error *ngIf="pacienteFormGroup.hasError('pattern') && !pacienteFormGroup.hasError('required')">
+                Numero de documento inválido
+            </mat-error>
+            <mat-error *ngIf="pacienteFormGroup.hasError('required')">
+                Numero de documento <strong>requerido</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="nombre" [readonly]="true" required>
+            <mat-icon matSuffix>face</mat-icon>
+            <mat-error *ngIf="pacienteFormGroup.hasError('required')">
+                Numero de documento inválido
+            </mat-error>
+        </mat-form-field>
+        <div  fxLayout="row"  fxLayoutAlign="end">
+            <button mat-raised-button color="accent" (click)="getPaciente(pacienteFormGroup.value)">Validar</button>
+        </div>
+
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="end">
+
+        <button mat-button matStepperNext>Siguiente ></button>
+    </div>
+
+</form>

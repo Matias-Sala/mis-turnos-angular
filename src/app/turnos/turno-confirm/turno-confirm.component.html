@@ -1,0 +1,28 @@
+<div fxLayout="column" fxLayoutAlign="space-between start">
+    <mat-list>
+        <mat-list-item>
+            <mat-icon matListIcon>account_circle</mat-icon>
+            <h3 matLine>Paciente</h3>
+            <p matLine>
+                <span>{{turnoConfirm.paciente}}</span>
+            </p>
+        </mat-list-item>
+        <mat-list-item>
+            <mat-icon matListIcon>local_hospital</mat-icon>
+            <h3 matLine>{{turnoConfirm.servicio}}</h3>
+            <p matLine>
+                <span>{{turnoConfirm.doctor}}</span>
+            </p>
+        </mat-list-item>
+        <mat-list-item>
+            <mat-icon matListIcon>today</mat-icon>
+            <h3 matLine>Fecha</h3>
+            <p matLine>
+                <span>{{turnoConfirm.turno}}</span>
+            </p>
+        </mat-list-item>
+    </mat-list>
+    <div>
+        <button mat-raised-button class="button-right" color="accent" (click)="confirmarTurno()">Confirmar turno</button>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="displayTable">
+    <div class="displayTableCell">
+  
+      <div class="authBlock">
+        <h3>Verificar documento</h3>
+  
+        <div class="formGroup">
+          <input type="number" class="formControl" placeholder="Número documento" #userDni required>
+        </div>
+   
+        <div class="formGroup">
+          <input type="button" class="btn btnPrimary" value="Continuar" (click)="confirmarDni(userDni.value)">
+        </div>
+  
+      <div class="redirectToLogin">
+        <span>Ya tienes una cuenta? <span class="redirect" routerLink="/sign-in">Ingresar</span></span>
+      </div>
+    </div>
+  
+  </div>

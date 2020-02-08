@@ -1,0 +1,48 @@
+<div class="displayTable">
+  <div class="displayTableCell">
+    <div class="bg">
+      <div class="authBlock">
+        <h3>Registrate</h3>
+
+        <form [formGroup]="formGrp">
+          <mat-form-field class="formGroup">
+            <input matInput placeholder="Email" formControlName="email" required>
+          </mat-form-field>
+  
+          <mat-form-field class="formGroup">
+            <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="formGrp.controls.password.hasError('pattern')">
+              Debe contener un minímo de 6 caracteres de los cuales al menos 1 en mayúscula, 1 en minúsciula y 1 numero.
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field class="formGroup">
+            <input matInput placeholder="Confirmar contraseña" [type]="hide ? 'password' : 'text'"
+              formControlName="confirmPassword" [errorStateMatcher]="matcher">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="formGrp.hasError('notSame')">
+              Passwords do not match
+            </mat-error>
+          </mat-form-field>
+        </form>
+
+
+        <div class="formGroup">
+          <input type="button" class="btn btnPrimary" value="Registrate" (click)="signUp()" [disabled]="!formGrp.valid">
+        </div>
+
+        <div class="redirectToLogin">
+          <span class="back-color">Ya tienes una cuenta? <span class="redirect" routerLink="/sign-in">Log
+              In</span></span>
+        </div>
+      </div>
+
+    </div>
+  </div>
