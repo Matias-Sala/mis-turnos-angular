@@ -14,7 +14,7 @@ export const environment = {
     appId: '1:526418128580:web:d394a2f1b7608fa0272391',
     measurementId: 'G-MEPSDF6CFH'
   },
-  loginUrl: 'http://localhost:5001/api/login/',
+  loginUrl:  'https://mis-turnos-nestjs.herokuapp.com/login/',
   turnosUrl: 'https://mis-turnos-nestjs.herokuapp.com/turnos/'
 };
 
